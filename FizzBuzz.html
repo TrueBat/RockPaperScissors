@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FizzBuzz</title>
+</head>
+<body>
+    <h1>Fizz and Buzz and not to forget FizzBuzz</h1>
+    <script>
+        var totalPlayers = prompt("how many people are playing?");
+        var playerNumber = prompt("what player are you?");
+        var maxNumber = prompt("what number do you want to reach?");
+
+        for (let i = +playerNumber; i <= +maxNumber; i += +totalPlayers) {  
+            if (i%15 == 0) {
+                console.log("FizzBuzz " + i);
+            }else if (i%5 == 0) {
+                console.log("Buzz " + i);
+            }else if (i%3 == 0) {
+                console.log("Fizz " + i);
+            }else{
+                console.log(i);
+            }
+        }
+    </script>
+</body>
+</html>
