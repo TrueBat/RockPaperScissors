@@ -1,3 +1,5 @@
+//Bot play/choice:
+
 function botPlay() {
     rand = Math.floor(Math.random() * 3);
     switch (rand) {
@@ -17,10 +19,28 @@ function botPlay() {
     return choice;
 }
 
-let playerChoice = prompt("Choose Paper Rocks or Scissors");
-let botChoice = botPlay();
+//player play and choice:
 
-function game(playerChoice , botChoice) {
+const result = document.querySelector('.result');
+
+const rock = document.querySelector('.rock');
+const paper = document.querySelector('.paper');
+const scissors = document.querySelector('.scissors');
+
+rock.addEventListener('click' , function() {
+    result.textContent = game('rock');
+});
+paper.addEventListener('click' , function(){
+    result.textContent = game('paper');
+});
+scissors.addEventListener('click' , function(){
+    result.textContent = game('scissors');
+});
+
+//game logic:
+
+function game(playerChoice) {
+    let botChoice = botPlay();
     let pc = playerChoice.toLowerCase();
     let bc = botChoice.toLowerCase();
     if (pc === bc) {
@@ -32,5 +52,3 @@ function game(playerChoice , botChoice) {
     }
     
 }
-
-console.log(game(playerChoice , botChoice));
