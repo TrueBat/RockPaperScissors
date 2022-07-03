@@ -59,16 +59,13 @@ function game(playerChoice) {
             gamesPlayed++;
             message = "you lose the bot chose " + botChoice;
         }else if (pc === "rock" && bc === "scissors" || pc === "paper" && bc === "rock" || pc === "scissors" && bc === "paper") {
-            playerScore++;
+            playerScore += 1;
             gamesPlayed++;
             message = "you win the bot chose " + botChoice;
         }
     
         if (gamesPlayed >= 5) {
 
-            playerScore = 0;
-            botScore = 0;
-            gamesPlayed = 0;
             const gameEnd = "5 games ended, ";
     
             if (playerScore > botScore) {
@@ -76,6 +73,12 @@ function game(playerChoice) {
             } else{
                 message += " " + gameEnd + "and the bot won!";
             }
+
+            playerScore = 0;
+            botScore = 0;
+            gamesPlayed = 0;
+            
         }
+        console.log("player: " + playerScore + " bot score: " + botScore + " games played: " + gamesPlayed);
         return message;
 }
